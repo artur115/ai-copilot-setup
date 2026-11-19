@@ -1,47 +1,78 @@
 # 14 · New laptop: install everything at once
 
 Moving to a new Mac, or starting fresh? Paste this into **Claude Code on the new Mac** (the
-desktop app's Code tab, or `claude` in Terminal). It installs the tools from steps 01 to 13 in
-one pass, checks each one, and leaves the steps only you can do (sign-ins, payments) as a short
-list at the end. It's safe to run twice: anything already installed is skipped.
+desktop app's Code tab, or `claude` in Terminal). It installs the tools, skills and plugins from
+this guide in one pass, checks each one, and ends with a short list of the steps only you can do
+(sign-ins, connectors, browser extensions). It's safe to run twice: anything already installed is
+skipped.
 
 ```text
-Set up this Mac for my AI job search in one pass, using the guide at
+Set up this Mac for my AI job search in one pass, using
 https://github.com/artur115/ai-job-search-setup (read README.md, SKILLS.md and prompts/01-13 first).
 
 RULES
-- Show me the full list of what you'll install, with approximate sizes, before installing anything,
-  and wait for my "go".
-- Never ask me to paste a password, API key or token into chat. Sign-ins happen in the browser or
-  the app; keys go in a .env file or the environment's credential form.
-- Install nothing paid. Anything that costs money (domain, Workspace, Calendly paid tier): list it
-  for me instead.
-- Check each install with a version command and show me the results as a table at the end.
-- If something fails, stop on that item, tell me why in one line, and continue with the rest.
+- First show me the plan: every item below, approximate download size, and free disk space
+  (df -h ~). Wait for my "go".
+- Never ask me to paste a password, API key or token into chat. I sign in in the browser or the
+  Claude app; keys go into .env files or the environment's credential form.
+- Install nothing paid and sign up for nothing.
+- Ask before each OPTIONAL item; install the CORE items after my "go".
+- Check every install with a version or list command. At the end show a table:
+  item | version | installed / already there / skipped / failed.
+- If something fails: one line on why, skip it, continue.
+- The /plugin lines are slash commands. Run each one in Terminal as `claude plugin ...` (for
+  example `claude plugin marketplace add artur115/ai-job-search-setup`) if this Claude Code has
+  that command; otherwise give me the exact lines to type into Claude Code myself.
 
-INSTALL (skip anything already present)
-1. Xcode Command Line Tools (xcode-select --install), then Homebrew (from brew.sh).
-2. With Homebrew: git, gh, node (LTS), python@3.13, ffmpeg. Also the Docker Desktop app only if
-   I say I'll run Sellbird with Docker or other local services.
-3. Claude Code CLI (official installer from the Claude Code docs), then remind me to run
-   `claude login` with my Pro/Max account.
-4. Clone my repos into ~/Documents (ask me for the list; mine are my website, resume and proof
-   projects).
-5. Skills and plugins from SKILLS.md: the job-search kit
-   (/plugin marketplace add artur115/ai-job-search-setup, then
-   /plugin install job-search-kit@ai-job-search-setup) and the others it lists for the Mac.
-6. graphify (prompts/05), if I want the knowledge graph.
-7. Playwright's Chromium for the resume builder (npx playwright install chromium in the resume
-   repo).
-8. Optional, only if I say yes: Sellbird (prompts/13) in ~/Documents/sellbird with python3.13,
-   in approval mode, with no mailbox connected.
+CORE: TOOLS
+1. Xcode Command Line Tools: xcode-select --install
+2. Homebrew (brew.sh). Then: brew install git gh node python@3.13 pipx
+3. Claude Code CLI with the official installer from the Claude Code docs.
+
+CORE: SKILLS AND PLUGINS (in Claude Code)
+4. My job-search kit (setup walkthrough, resume builder, ATS check, proof project):
+     /plugin marketplace add artur115/ai-job-search-setup
+     /plugin install job-search-kit@ai-job-search-setup
+5. graphify, the knowledge graph (prompts/05):
+     pipx install graphifyy && graphify install
+6. Playwright's Chromium, used by the resume builder to print the PDF:
+     npx playwright install chromium   (inside my resume repo, once it's cloned)
+7. My repos into ~/Documents: ask me for the list (website, resume, proof projects).
+
+OPTIONAL: ASK ME ONE BY ONE (all listed in SKILLS.md, with what each does)
+8.  Build-and-ship skills from glebis/claude-skills (feature-factory, tdd, app-map, app-release):
+      /plugin marketplace add glebis/claude-skills
+      /plugin install tdd@glebis-skills
+      npx skills add glebis/claude-skills --skill feature-factory   (and app-map, app-release)
+9.  addyosmani/agent-skills (/spec, /plan, /build, /test, /review, /ship):
+      /plugin marketplace add addyosmani/agent-skills
+      /plugin install agent-skills@addy-agent-skills
+10. ponytail (keeps generated code short):
+      /plugin marketplace add DietrichGebert/ponytail
+      /plugin install ponytail@ponytail
+11. superpowers (brainstorm → plan → test-driven build):
+      /plugin install superpowers@claude-plugins-official
+12. mattpocock/skills:
+      /plugin install mattpocock-skills@claude-plugins-official
+13. Karpathy coding guidelines:
+      /plugin marketplace add forrestchang/andrej-karpathy-skills
+      /plugin install andrej-karpathy-skills@karpathy-skills
+14. ECC (Everything Claude Code: 300+ skills, agents and hooks). Large, and its hooks change how
+    Claude works; read its README's opt-out settings with me first:
+      /plugin marketplace add https://github.com/affaan-m/ECC
+      /plugin install ecc@ecc
+15. Sellbird for outreach (prompts/13): only clone and install, approval mode, no mailbox.
 
 THEN GIVE ME
-- A table: tool, version, status (installed / already there / failed).
-- "Your part" as a numbered list: claude login, gh auth login, Google/GitHub/Calendly sign-ins
-  in the Claude app's connectors (prompts/02), Claude in Chrome extension (prompts/11), Simplify
-  extension (prompts/10), and anything that failed.
-- If I'm moving from an old Mac: a list of what to copy over that git doesn't carry (every .env
-  file, Sellbird's data/ folder and sellbird.local.yaml, browser sign-ins), and how to copy it
-  safely (AirDrop or an encrypted disk, never email or chat).
+- The table.
+- "Your part", numbered: claude login (Pro/Max); gh auth login; the Claude app's connectors
+  (GitHub, Gmail, Google Calendar, Google Drive, Calendly: prompts/02); the Claude in Chrome
+  extension (prompts/11); the Simplify extension (prompts/10); turning on the built-in skills I
+  use in the Claude app's settings (docs, xlsx, pptx, pdf, google-workspace, deep-research,
+  skill-creator); and anything that failed.
+- Moving from an old Mac? List what git doesn't carry and how to copy it safely (AirDrop or an
+  encrypted disk, never email or chat): every .env file in my repos, Sellbird's .env,
+  sellbird.local.yaml and data/ folder (its do-not-email list must not be lost), and my
+  SETUP-CHECKLIST.md if it isn't committed. Plugins live per Mac, so they're reinstalled above,
+  not copied.
 ```

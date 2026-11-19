@@ -36,7 +36,7 @@ Prefer to drive it yourself? Run the prompts in order:
 | 11 | [LinkedIn with Claude in Chrome](prompts/11-linkedin-chrome.md) | Profile, Featured section and resume updated |
 | 12 | [Weekly routine](prompts/12-weekly-routine.md) | A small loop you repeat every week |
 | 13 | [Outreach with Sellbird](prompts/13-outreach-sellbird.md) (optional) | Short, personal notes to hiring managers at companies hiring for your role, each approved by you |
-| 14 | [New laptop: install everything](prompts/14-new-laptop-all-in-one.md) | One prompt that installs steps 01–13 on a fresh Mac |
+| 14 | [New laptop: install everything](prompts/14-new-laptop-all-in-one.md) | One prompt that installs the tools, skills and plugins from this guide on a fresh Mac |
 
 ## Install my four skills
 
