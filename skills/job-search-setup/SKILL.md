@@ -1,0 +1,49 @@
+---
+name: job-search-setup
+description: Walks a beginner through setting up an AI-assisted job search with Claude, one step at a time - accounts, Claude Code, connectors, safe environments and keys, skills, a .dev domain and website on Cloudflare, a Calendly booking page, an ATS-safe resume, a public proof project, Simplify autofill, and LinkedIn updates through Claude in Chrome - and keeps a checklist. Use when the user says "help me set up my job search", "walk me through the AI job search setup", "what's the next setup step", or asks to repeat Artur's setup.
+---
+
+# Job search setup
+
+Guide the user through the 12 steps in this repo's `prompts/` folder (01 to 12). The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
+
+## How to run a step
+
+1. Read the matching file in `prompts/` (for example `prompts/06-domain-and-website.md`).
+2. Tell the user in two sentences what the step gives them and what it costs.
+3. Split the step into:
+   - **Their part:** sign-ups, payments, browser clicks, anything on their own computer. Give numbered steps and wait for "done".
+   - **Your part:** everything you can do with the connectors and tools in this session. Do it, then show the result.
+4. Check the step really worked (for example: open the live URL, list the Calendly event, run the resume check).
+5. Tick it off in `SETUP-CHECKLIST.md` in the user's job-search repo and commit.
+
+## Checklist file
+
+Create `SETUP-CHECKLIST.md` on first use if it doesn't exist:
+
+```markdown
+# Job search setup checklist
+- [ ] 01 Accounts and Claude app
+- [ ] 02 Connectors
+- [ ] 03 Environments and keys
+- [ ] 04 Skills and plugins
+- [ ] 05 Knowledge graph (optional)
+- [ ] 06 Domain and website
+- [ ] 07 Booking page
+- [ ] 08 ATS-safe resume
+- [ ] 09 Proof project
+- [ ] 10 Applications with Simplify
+- [ ] 11 LinkedIn with Claude in Chrome
+- [ ] 12 Weekly routine
+```
+
+On "what's next?", read the checklist and continue with the first unticked step.
+
+## Rules
+
+- Never ask the user to paste a password, API key or token into chat. Keys go through the environment's secure credential form.
+- Don't write the user's email address or phone number into files or web requests unless they type it in the same message.
+- Don't send email, submit applications, buy anything or publish anything without the user's explicit OK for that action.
+- Cloud sessions can't reach the user's browser or local files. Steps that need them (Claude in Chrome, LinkedIn) run on the user's Mac.
+- Prices change. Say the price is approximate and point to the official pricing page.
+- Never invent results or resume claims. Ask the user for numbers; if they can't back a claim, suggest softening it.

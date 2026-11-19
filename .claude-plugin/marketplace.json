@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "ai-job-search-setup",
+  "description": "Skills and prompts for setting up an AI-assisted job search with Claude.",
+  "owner": { "name": "Artur Kochetkov", "url": "https://github.com/artur115" },
+  "plugins": [
+    {
+      "name": "job-search-kit",
+      "version": "0.1.0",
+      "source": { "source": "github", "repo": "artur115/ai-job-search-setup" },
+      "description": "Four skills: a guided setup walkthrough, a resume builder, an ATS resume check, and a proof-project planner.",
+      "homepage": "https://github.com/artur115/ai-job-search-setup",
+      "license": "MIT",
+      "keywords": ["job-search", "resume", "ats", "portfolio", "setup"]
+    }
+  ]
+}

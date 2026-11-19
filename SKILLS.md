@@ -1,0 +1,157 @@
+# Every skill and plugin I installed
+
+Six sources live inside my project repos (1 to 6), four plugins are installed on my Mac (7 to 10), and Anthropic's built-in skills come with the account.
+
+A **skill** is a folder with a `SKILL.md` file (and sometimes scripts). Claude reads it only when your request matches its description. A **plugin** bundles skills, slash commands, agents or hooks so they install in one step. A **marketplace** is a GitHub repo that lists plugins.
+
+Three places a skill can live:
+
+| Where | Scope | How it gets there |
+|---|---|---|
+| Your Claude account | Every chat and session | Built in, or uploaded in the Claude app's skills settings |
+| `~/.claude/skills/` on your Mac | Every Claude Code session on that Mac | Copy the folder, or `npx skills add ...` |
+| `<repo>/.claude/skills/` | Anyone who opens that repo | Commit the folder, so cloud sessions and teammates get it too |
+
+I put the build-and-ship skills **inside the app's repo** so cloud sessions always have them.
+
+## From GitHub repos
+
+### 1. glebis/claude-skills
+About 100 community skills by Gleb Kalinin, MIT licensed. Repo: <https://github.com/glebis/claude-skills>
+
+I copied four of them into the Pillwave repo (`.claude/skills/`, from commit `4d37d3b`):
+
+| Skill | What it does | When I use it |
+|---|---|---|
+| `feature-factory` | Takes one feature from intent to merge: a written goal contract, TDD, deterministic checks, and two human checkpoints (approve the goal, approve the merge) | "Let's build the reminder snooze feature" |
+| `tdd` | Enforces red, green, refactor with small vertical slices; writes tests in a separate context from the code so the tests stay honest. Supports Jest, Vitest, pytest and others | Inside a feature, for logic that must not break |
+| `app-map` | Inventories every screen and flow from the code, reads the real tests, and builds one HTML page with a ranked "test next" list | "What should we test next?" |
+| `app-release` | Step-by-step iOS release to TestFlight and the App Store, including signing and App Privacy labels, and fixes for common upload errors | Shipping a build (macOS and Xcode) |
+
+Install:
+
+```bash
+# tdd is published as a plugin
+/plugin marketplace add glebis/claude-skills
+/plugin install tdd@glebis-skills
+
+# the others install as plain skills
+npx skills add glebis/claude-skills --skill feature-factory
+npx skills add glebis/claude-skills --skill app-map
+npx skills add glebis/claude-skills --skill app-release
+```
+
+Or ask Claude: *"Copy feature-factory, tdd, app-map and app-release from glebis/claude-skills into this repo's .claude/skills and keep the MIT license file."*
+
+### 2. Graphify-Labs/graphify
+Turns a folder of code, docs, images or video into a knowledge graph Claude can query before it opens files. Repo: <https://github.com/Graphify-Labs/graphify> · PyPI package: `graphifyy`
+
+- Writes `graphify-out/` with `graph.html` (interactive map), `GRAPH_REPORT.md` (summary) and `graph.json` (queryable graph).
+- Adds hooks so Claude checks the graph before it searches or reads files.
+- Commit `graphify-out/` so every new session starts with the map.
+
+Install:
+
+```bash
+pip install graphifyy && graphify install    # on macOS, use pipx if pip refuses
+```
+
+Then type `/graphify .` in Claude Code.
+
+### 3. addyosmani/agent-skills
+"Production-grade engineering skills" by Addy Osmani: about 20 skills plus slash commands for each stage of building software: `/spec`, `/plan`, `/build`, `/test`, `/review`, `/ship`, `/webperf`, `/a11y`. Repo: <https://github.com/addyosmani/agent-skills>
+
+```
+/plugin marketplace add addyosmani/agent-skills
+/plugin install agent-skills@addy-agent-skills
+```
+
+### 4. DietrichGebert/ponytail
+A plugin that makes the agent write the shortest code that works, "the lazy senior dev", while still adding tests for risky logic. Repo: <https://github.com/DietrichGebert/ponytail>
+
+```
+/plugin marketplace add DietrichGebert/ponytail
+/plugin install ponytail@ponytail
+```
+
+### 5. expo/skills (through Anthropic's official marketplace)
+Official Expo skills for React Native: Expo Router UI, data fetching, EAS builds, App Store and Play Store releases, and SDK upgrades. Listed in <https://github.com/anthropics/claude-plugins-official>, with the code at <https://github.com/expo/skills>.
+
+```
+/plugin install expo@claude-plugins-official
+```
+
+### 6. artur115/ai-job-search-setup (this repo)
+My four skills for the job search itself. See [README](README.md#install-my-three-skills).
+
+```
+/plugin marketplace add artur115/ai-job-search-setup
+/plugin install job-search-kit@ai-job-search-setup
+```
+
+## Plugins installed on my Mac (per computer)
+
+Plugins installed in the Claude Code app on a Mac live on that Mac only. Install them again on each new laptop.
+
+### 7. affaan-m/ECC (Everything Claude Code), the hackathon winner
+The biggest one. Affaan Mustafa won the Anthropic x Forum Ventures hackathon (Sep 2025) and open-sourced his whole setup under MIT. Its README lists **327 skills, 72 agents and 98 commands**, plus hooks, memory, rules and the AgentShield security scanner. Repo: <https://github.com/affaan-m/ECC> (it used to be called everything-claude-code).
+
+```
+/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc
+```
+
+It adds hooks that change how Claude works. One example is GateGuard, which asks Claude to state facts before its first edit in a session. Read the README's opt-out settings before you install, and don't install all of it if you only need a few skills.
+
+### 8. obra/superpowers
+A complete development method built from small skills: brainstorm, write a plan, then build in test-driven steps with reviews. About 15 skills. Repo: <https://github.com/obra/superpowers>
+
+```
+/plugin install superpowers@claude-plugins-official
+```
+
+### 9. mattpocock/skills
+"Skills for real engineers": about 40 small, composable skills by Matt Pocock that you adapt to your own way of working. Repo: <https://github.com/mattpocock/skills>
+
+```
+/plugin install mattpocock-skills@claude-plugins-official
+```
+
+### 10. forrestchang/andrej-karpathy-skills
+One set of guidelines (a CLAUDE.md file and one skill) based on Andrej Karpathy's notes on common LLM coding mistakes: think before coding, keep it simple, change only what was asked, check the result. Repo: <https://github.com/forrestchang/andrej-karpathy-skills>
+
+```
+/plugin marketplace add forrestchang/andrej-karpathy-skills
+/plugin install andrej-karpathy-skills@karpathy-skills
+```
+
+## Is there a resume skill?
+
+None of the sources above has a skill for building resumes. I built mine by hand, as `resume.html` printed to PDF with Playwright, so this repo now packages that method as the [`resume-builder`](skills/resume-builder/SKILL.md) skill, paired with [`ats-resume-check`](skills/ats-resume-check/SKILL.md). Community resume skills also exist (search "resume" on skills.sh). I haven't reviewed them, so read their SKILL.md before installing one.
+
+## Built into my Claude account (no install needed)
+
+These came with my account from Anthropic. You can turn each one on or off in the Claude app's settings.
+
+| Skill | What it does |
+|---|---|
+| `docx`, `xlsx`, `pptx`, `pdf` | Create and edit Word, Excel, PowerPoint and PDF files |
+| `google-workspace` | Edit Google Docs, Sheets and Slides in place through the Google connectors (this is how my presentation was built) |
+| `docs` | Claude's own shareable documents |
+| `deep-research` | Multi-source research with a written report |
+| `skill-creator` | Writes and tests new skills for you |
+| `chrome-browser` | Rules for Claude in Chrome (used for LinkedIn) |
+| `built-in-browser`, `computer-use` | Rules for the desktop app's browser pane and screen control |
+| `import-memory`, `morning` | Import memory from another assistant; a daily morning brief |
+
+I also have one private skill of my own, `post-trade-analysis`, which grades alerts from a trading scanner I wrote. It isn't shared here.
+
+## Agents (not skills)
+
+The Pillwave marketing repo has 23 Claude **subagents** in `.claude/agents/`, one Markdown file per role: trend scout, content strategist, caption writer, email writer, ASO researcher, compliance checker, weekly planner and so on. An agent is a named helper with its own instructions and tools; Claude hands a task to it. To make your own, ask: *"Create a subagent in .claude/agents that reviews my cover letters against the job description."*
+
+## Safety settings that go with all of this
+
+- **Environments:** each cloud environment has a network allowlist. A session can only reach the sites you allowed.
+- **Keys:** add API keys through the secure credential form, never in chat.
+- **Privacy guard:** I run a plugin that stops Claude writing my email address into files or web requests unless I type it myself.
