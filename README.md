@@ -35,6 +35,8 @@ Prefer to drive it yourself? Run the prompts in order:
 | 10 | [Applications](prompts/10-applications-simplify.md) | Simplify autofill on Greenhouse and similar forms |
 | 11 | [LinkedIn with Claude in Chrome](prompts/11-linkedin-chrome.md) | Profile, Featured section and resume updated |
 | 12 | [Weekly routine](prompts/12-weekly-routine.md) | A small loop you repeat every week |
+| 13 | [Outreach with Sellbird](prompts/13-outreach-sellbird.md) (optional) | Short, personal notes to hiring managers at companies hiring for your role, each approved by you |
+| 14 | [New laptop: install everything](prompts/14-new-laptop-all-in-one.md) | One prompt that installs the tools, skills and plugins from this guide on a fresh Mac |
 
 ## Install my four skills
 
@@ -47,7 +49,7 @@ In Claude Code, run:
 
 | Skill | What it does | Say this to use it |
 |---|---|---|
-| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 12, checks each one is done, and keeps a checklist | "help me set up my job search" |
+| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 13, checks each one is done, and keeps a checklist | "help me set up my job search" |
 | [`ats-resume-check`](skills/ats-resume-check/SKILL.md) | Checks a resume PDF for fonts, selectable text and links, and reports what to fix | "check my resume PDF for ATS problems" |
 | [`proof-project`](skills/proof-project/SKILL.md) | Turns one resume claim into a small public project with synthetic data and tests | "build a proof project for this resume line" |
 | [`resume-builder`](skills/resume-builder/SKILL.md) | Writes your resume as one HTML file and prints an ATS-safe PDF with Playwright; includes a template | "build my resume" |

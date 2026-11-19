@@ -125,6 +125,13 @@ One set of guidelines (a CLAUDE.md file and one skill) based on Andrej Karpathy'
 /plugin install andrej-karpathy-skills@karpathy-skills
 ```
 
+## An outreach tool (not a skill): Sellbird
+
+[ethanplusai/sellbird](https://github.com/ethanplusai/sellbird), AGPL-3.0, Python 3.11+. An
+open-source cold-email agent that runs through Claude Code on your Claude plan. For a job search,
+its hiring signals find companies with your role open on their own job board, and it drafts a short
+note to the person who decides. Everything waits for your approval. Setup: [prompts/13](prompts/13-outreach-sellbird.md).
+
 ## Is there a resume skill?
 
 None of the sources above has a skill for building resumes. I built mine by hand, as `resume.html` printed to PDF with Playwright, so this repo now packages that method as the [`resume-builder`](skills/resume-builder/SKILL.md) skill, paired with [`ats-resume-check`](skills/ats-resume-check/SKILL.md). Community resume skills also exist (search "resume" on skills.sh). I haven't reviewed them, so read their SKILL.md before installing one.
