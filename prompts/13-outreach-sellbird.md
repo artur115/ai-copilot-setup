@@ -72,5 +72,10 @@ SENDING (only on my separate go-ahead)
   name, and an easy "not interested" that you honour immediately.
 - Outside the US (Canada, the UK, the EU) the rules on unsolicited email are stricter. Keep to
   your own country unless you know the rules there.
+- **Don't send cold email through a newsletter service** (Resend, Mailchimp, Kit, Amazon SES and
+  similar). Their rules generally allow only email to people who signed up, so an account can be
+  suspended, and Sellbird also needs a real mailbox it can read replies from (IMAP or Gmail/
+  Microsoft sign-in), which those services don't give you. Use your own Gmail or Google
+  Workspace mailbox. Check the service's acceptable-use page if you're unsure.
 - Every "I noticed your site doesn't…" claim comes from an automated read of one page. Ask
   Claude to open the page and check it before you approve the draft.
