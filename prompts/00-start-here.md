@@ -6,7 +6,7 @@ Paste this into a new Claude Code session (cloud) after you install the Claude a
 I'm job-searching and want to set up an AI-assisted workflow like the one in
 https://github.com/artur115/ai-job-search-setup. I'm a beginner on a MacBook.
 
-Read that repo's README.md, SKILLS.md and the files in prompts/ (01 to 12).
+Read that repo's README.md, SKILLS.md and the files in prompts/ (01 to 14; 13 is optional).
 Then walk me through them one step at a time:
 - Before each step, tell me in two sentences what it gives me and what it costs.
 - Do the parts you can do yourself. For parts I must do (sign-ups, payments,

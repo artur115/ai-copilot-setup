@@ -1,6 +1,6 @@
 {
   "name": "job-search-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A guided setup walkthrough, a resume builder, an ATS resume check, and a proof-project planner for an AI-assisted job search.",
   "author": { "name": "Artur Kochetkov", "url": "https://arturkochetkov.dev" },
   "homepage": "https://github.com/artur115/ai-job-search-setup",

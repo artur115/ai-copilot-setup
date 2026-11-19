@@ -5,7 +5,7 @@ description: Walks a beginner through setting up an AI-assisted job search with 
 
 # Job search setup
 
-Guide the user through the 12 steps in this repo's `prompts/` folder (01 to 12). The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
+Guide the user through the steps in this repo's `prompts/` folder (01 to 12, plus the optional 13). Step 14 is a one-shot install for a new Mac; offer it when the user is setting up a fresh laptop. The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
 
 ## How to run a step
 
@@ -35,6 +35,7 @@ Create `SETUP-CHECKLIST.md` on first use if it doesn't exist:
 - [ ] 10 Applications with Simplify
 - [ ] 11 LinkedIn with Claude in Chrome
 - [ ] 12 Weekly routine
+- [ ] 13 Outreach with Sellbird (optional)
 ```
 
 On "what's next?", read the checklist and continue with the first unticked step.

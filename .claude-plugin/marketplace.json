@@ -6,7 +6,7 @@
   "plugins": [
     {
       "name": "job-search-kit",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": { "source": "github", "repo": "artur115/ai-job-search-setup" },
       "description": "Four skills: a guided setup walkthrough, a resume builder, an ATS resume check, and a proof-project planner.",
       "homepage": "https://github.com/artur115/ai-job-search-setup",
