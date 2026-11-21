@@ -51,7 +51,8 @@ RULES
 7. Keys go only in Sellbird's .env, which is git-ignored. Never print them back to me.
 
 DRY RUN
-- Preflight: python3.13 (brew install python@3.13 if missing), claude signed in, git.
+- Preflight: python3.13 (if missing: brew install python@3.13 on an Apple-chip Mac; the python.org
+  macOS installer on an Intel Mac, see INSTALL.md "Intel Macs"), claude signed in, git.
 - Clone into ~/Documents/sellbird, then run its own setup: "set up Sellbird for me".
 - Find up to 25 companies hiring for my role → read their sites → find who decides (max 2 per
   company) → verify one address each → draft notes for the top 10 into the Outbox.

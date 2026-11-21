@@ -16,7 +16,7 @@ Set up a MacBook with Claude as your AI co-pilot: it remembers your work between
 
 ## Install
 
-Paste one prompt into Claude Code on your Mac: **[INSTALL.md](INSTALL.md)**. It installs the tools, the kit, memory (optional) and Remote Control (optional), checks every step, and ends with a short list of what only you can do.
+Paste one prompt into Claude Code on your Mac: **[INSTALL.md](INSTALL.md)**. It works on Apple-chip and Intel Macs: it checks your chip first and skips Homebrew on Intel ([why](INSTALL.md#intel-macs)). It installs the tools, the kit, memory (optional) and Remote Control (optional), checks every step, and ends with a short list of what only you can do.
 
 What the setup produced for me:
 

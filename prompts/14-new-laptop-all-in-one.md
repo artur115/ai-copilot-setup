@@ -18,15 +18,46 @@ RULES
 - Install nothing paid and sign up for nothing.
 - Ask before each OPTIONAL item; install the CORE items after my "go".
 - Check every install with a version or list command. At the end show a table:
-  item | version | installed / already there / skipped / failed.
+  item | version | installed / already there / skipped / failed, with the chip, macOS
+  version and path (A or B) on top.
 - If something fails: one line on why, skip it, continue.
 - The /plugin lines are slash commands. Run each one in Terminal as `claude plugin ...` (for
   example `claude plugin marketplace add artur115/ai-copilot-setup`) if this Claude Code has
   that command; otherwise give me the exact lines to type into Claude Code myself.
 
+0. CHECK THIS MAC FIRST, changing nothing. Run these and show me a table
+   (chip, macOS version, memory, free disk, Rosetta):
+     uname -m                                  # arm64 = Apple chip, x86_64 = Intel
+     sysctl -n machdep.cpu.brand_string        # "Apple M..." or "Intel(R) Core(TM) ..."
+     sysctl -n sysctl.proc_translated          # 1 = Terminal runs under Rosetta; missing/0 = no
+     sw_vers -productVersion
+     sysctl -n hw.memsize
+     df -h ~
+   Then pick the path, and say which one in one line:
+   - macOS older than 13: stop. Claude Code needs macOS 13 Ventura or newer. Tell me to check
+     System Settings > General > Software Update. If this Mac can't update, I use Claude in
+     the browser (claude.ai and claude.ai/code) instead of installing anything locally.
+   - proc_translated is 1 (an Apple-chip Mac with Terminal running under Rosetta): stop.
+     Tell me to quit Terminal, untick "Open using Rosetta" in Terminal's Get Info window,
+     reopen it and run the check again. Otherwise Homebrew lands in the wrong place.
+   - arm64: PATH A (Apple chip). x86_64 with an Intel CPU: PATH B (Intel Mac).
+
 CORE: TOOLS
-1. Xcode Command Line Tools: xcode-select --install
-2. Homebrew (brew.sh). Then: brew install git gh node python@3.13 pipx
+1. Xcode Command Line Tools (xcode-select --install; gives git), then:
+   PATH A, Apple chip: Homebrew from brew.sh (it installs to /opt/homebrew; add the shellenv
+     line it prints to ~/.zprofile), then: brew install git gh node python@3.13 pipx
+   PATH B, Intel Mac: skip Homebrew. Homebrew gives Intel Macs only Tier 3 support: no
+     prebuilt packages, so installs compile from source, take long and can fail, and Intel
+     support ends around September 2027. Use the official installers instead. Give me each
+     link, wait while I open the .pkg, then check it:
+       - Node.js LTS, "macOS Installer (.pkg)" from nodejs.org          -> node -v
+       - Python 3.13, "macOS 64-bit universal2 installer" from python.org -> python3.13 --version
+       - pipx: python3.13 -m pip install --user pipx && python3.13 -m pipx ensurepath,
+         then open a new Terminal tab                                    -> pipx --version
+       - GitHub CLI, the macOS installer from cli.github.com             -> gh --version
+     If I insist on Homebrew anyway, warn me about the above first (on Intel it installs
+     to /usr/local).
+2. Check the tools: git --version, node -v, python3.13 --version, pipx --version, gh --version.
 3. Claude Code CLI with the official installer from the Claude Code docs.
 
 CORE: SKILLS AND PLUGINS (in Claude Code)
