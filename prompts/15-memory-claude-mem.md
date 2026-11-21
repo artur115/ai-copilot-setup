@@ -46,12 +46,32 @@ work between sessions. Audit first, install second. I run the install command my
 
 ## Check, pause, remove
 
+Check that it's running:
+
 ```bash
 npx claude-mem status
+```
+
+```bash
 npx claude-mem doctor
-npx claude-mem stop          # pause the worker; a new session may start it again
-npx claude-mem uninstall     # removes plugin and hooks; keeps your data in ~/.claude-mem
-rm -rf ~/.claude-mem         # deletes all memory, permanently
+```
+
+Pause the worker. A new session may start it again:
+
+```bash
+npx claude-mem stop
+```
+
+Uninstall. This removes the plugin and hooks and keeps your data in `~/.claude-mem`:
+
+```bash
+npx claude-mem uninstall
+```
+
+**Permanent:** delete all saved memory. Only run this if you're sure:
+
+```bash
+rm -rf ~/.claude-mem
 ```
 
 To pause it fully, open `/plugin` in Claude Code and disable claude-mem.

@@ -44,11 +44,17 @@ RECOMMENDED (ask me first)
 5. Remote Control and long runs: walk me through prompts/16 (desktop app setting,
    spawn mode same-dir, caffeinate, the Battery setting, permission modes).
 
-OPTIONAL (ask one by one; SKILLS.md says what each does)
-6. glebis/claude-skills (tdd, feature-factory, app-map, app-release), addyosmani/agent-skills,
-   ponytail, superpowers, mattpocock-skills, andrej-karpathy-skills.
-7. ECC (Everything Claude Code). It's large and its hooks change how Claude works, so read
-   its README's opt-out settings with me before installing.
+CODING SET (ask once for the whole set; these don't overlap)
+6. superpowers (the one coding method), ponytail (short code), agent-skills (/review and
+   other commands I type), expo (React Native apps). Install commands are in SKILLS.md.
+   Project-only skills from glebis/claude-skills (feature-factory, app-map, app-release) go
+   into a project's .claude/skills with npx skills add, only when I start that project.
+
+DO NOT STACK (read SKILLS.md "Why I don't stack coding-style plugins")
+7. ECC, mattpocock-skills, andrej-karpathy-skills and the glebis tdd plugin overlap with
+   superpowers. Don't install them alongside it. If I ask for one, explain the overlap and
+   offer it instead of superpowers, not in addition. If any are already installed, offer
+   the clean-up commands from SKILLS.md "Clean up a stacked setup".
 
 FINISH WITH
 - A table: item | version | installed / already there / skipped / failed.

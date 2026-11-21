@@ -83,10 +83,8 @@ See [SKILLS.md](SKILLS.md) for the full list with sources, descriptions and inst
 | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | agent-skills plugin: /spec, /plan, /build, /test, /review, /ship |
 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | ponytail plugin: keeps generated code short |
 | [expo/skills](https://github.com/expo/skills) (via [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)) | expo plugin for React Native apps |
-| [affaan-m/ECC](https://github.com/affaan-m/ECC) | Everything Claude Code, the Anthropic hackathon winner: 327 skills, 72 agents (on my Mac) |
-| [obra/superpowers](https://github.com/obra/superpowers) | Brainstorm, plan, test-driven build method (on my Mac) |
-| [mattpocock/skills](https://github.com/mattpocock/skills) | Small engineering skills you adapt (on my Mac) |
-| [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) | Karpathy-style coding guidelines (on my Mac) |
+| [obra/superpowers](https://github.com/obra/superpowers) | My one coding method: brainstorm, plan, test-driven build (on my Mac) |
+| [affaan-m/ECC](https://github.com/affaan-m/ECC), [mattpocock/skills](https://github.com/mattpocock/skills), [andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills) | Alternatives to superpowers. Pick one, don't stack them ([why](SKILLS.md#why-i-dont-stack-coding-style-plugins)) |
 | Anthropic built-in skills | Docs, Slides, Sheets, PDF, Word, Excel, PowerPoint, skill-creator, deep research |
 
 ## Design sites for web and app ideas

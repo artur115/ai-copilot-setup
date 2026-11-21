@@ -45,29 +45,23 @@ RECOMMENDED: ASK ME FIRST
     account, no trial; telemetry off; two-session memory test).
 7b. Remote Control and long runs: walk me through prompts/16.
 
-OPTIONAL: ASK ME ONE BY ONE (all listed in SKILLS.md, with what each does)
-8.  Build-and-ship skills from glebis/claude-skills (feature-factory, tdd, app-map, app-release):
-      /plugin marketplace add glebis/claude-skills
-      /plugin install tdd@glebis-skills
-      npx skills add glebis/claude-skills --skill feature-factory   (and app-map, app-release)
-9.  addyosmani/agent-skills (/spec, /plan, /build, /test, /review, /ship):
-      /plugin marketplace add addyosmani/agent-skills
-      /plugin install agent-skills@addy-agent-skills
-10. ponytail (keeps generated code short):
+OPTIONAL: THE CODING SET (ask once; these don't overlap, see SKILLS.md)
+8.  superpowers (the one coding method: brainstorm → plan → test-driven build → review):
+      /plugin install superpowers@claude-plugins-official
+9.  ponytail (keeps generated code short):
       /plugin marketplace add DietrichGebert/ponytail
       /plugin install ponytail@ponytail
-11. superpowers (brainstorm → plan → test-driven build):
-      /plugin install superpowers@claude-plugins-official
-12. mattpocock/skills:
-      /plugin install mattpocock-skills@claude-plugins-official
-13. Karpathy coding guidelines:
-      /plugin marketplace add forrestchang/andrej-karpathy-skills
-      /plugin install andrej-karpathy-skills@karpathy-skills
-14. ECC (Everything Claude Code: 300+ skills, agents and hooks). Large, and its hooks change how
-    Claude works; read its README's opt-out settings with me first:
-      /plugin marketplace add https://github.com/affaan-m/ECC
-      /plugin install ecc@ecc
-15. Sellbird for outreach (prompts/13): only clone and install, approval mode, no mailbox.
+10. addyosmani/agent-skills (/spec, /plan, /build, /test, /review, /ship; run only when typed):
+      /plugin marketplace add addyosmani/agent-skills
+      /plugin install agent-skills@addy-agent-skills
+11. expo (React Native apps):
+      /plugin install expo@claude-plugins-official
+12. Project-only skills from glebis/claude-skills, inside that project's folder:
+      npx skills add glebis/claude-skills --skill feature-factory   (and app-map, app-release)
+13. Do NOT also install ECC, mattpocock-skills, andrej-karpathy-skills or tdd@glebis-skills:
+    they overlap with superpowers (SKILLS.md, "Why I don't stack coding-style plugins").
+    If any are already installed, offer the clean-up commands from SKILLS.md.
+14. Sellbird for outreach (prompts/13): only clone and install, approval mode, no mailbox.
 
 THEN GIVE ME
 - The table.
