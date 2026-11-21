@@ -5,7 +5,7 @@ description: Walks a beginner through setting up an AI-assisted job search with 
 
 # Job search setup
 
-Guide the user through the steps in this repo's `prompts/` folder (01 to 12, plus the optional 13). Step 14 is a one-shot install for a new Mac; offer it when the user is setting up a fresh laptop. The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
+Guide the user through the steps in this repo's `prompts/` folder (01 to 12, plus the optional 13). Step 14 is a one-shot install for a new Mac; offer it when the user is setting up a fresh laptop. Steps 15 (memory with claude-mem) and 16 (Remote Control and long runs) set up the Mac itself; offer them after step 04, and run them only in Claude Code on the user's Mac. The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
 
 ## How to run a step
 
@@ -28,6 +28,8 @@ Create `SETUP-CHECKLIST.md` on first use if it doesn't exist:
 - [ ] 03 Environments and keys
 - [ ] 04 Skills and plugins
 - [ ] 05 Knowledge graph (optional)
+- [ ] 15 Memory between sessions with claude-mem (on the Mac, optional)
+- [ ] 16 Remote Control and long runs (on the Mac, optional)
 - [ ] 06 Domain and website
 - [ ] 07 Booking page
 - [ ] 08 ATS-safe resume
@@ -45,6 +47,7 @@ On "what's next?", read the checklist and continue with the first unticked step.
 - Never ask the user to paste a password, API key or token into chat. Keys go through the environment's secure credential form.
 - Don't write the user's email address or phone number into files or web requests unless they type it in the same message.
 - Don't send email, submit applications, buy anything or publish anything without the user's explicit OK for that action.
+- claude-mem: never run the plain `npx claude-mem install`, which pre-selects a paid plan with a card-required trial. Use `--provider claude` with `CLAUDE_MEM_ONLINE_OPTIN=false` as in prompts/15, and let the user run it.
 - Cloud sessions can't reach the user's browser or local files. Steps that need them (Claude in Chrome, LinkedIn) run on the user's Mac.
 - Prices change. Say the price is approximate and point to the official pricing page.
 - Never invent results or resume claims. Ask the user for numbers; if they can't back a claim, suggest softening it.

@@ -1,6 +1,22 @@
-# AI job search setup
+# AI co-pilot setup
 
-How I set up an AI-assisted job search on a MacBook in five days, written so a friend can repeat it. You get copy-paste prompts for every step, a list of every skill and plugin I installed (with the GitHub repo each came from), four small skills of my own you can install in one command, and the design sites I use for web and app ideas.
+Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), four small skills of my own, and the design sites I use for web and app ideas.
+
+*Formerly `ai-job-search-setup`. Old links redirect here.*
+
+## What it does for you
+
+| You get | What that means day to day |
+|---|---|
+| **A co-pilot on your Mac** | Ask in plain English; Claude plans, edits files and asks before risky steps |
+| **Memory between sessions** | Close Claude tonight; tomorrow it already knows what you did ([claude-mem](prompts/15-memory-claude-mem.md)) |
+| **Remote Control** | Start and steer sessions on your Mac from your phone ([prompt 16](prompts/16-remote-control-always-on.md)) |
+| **Skills and plugins** | Tested recipes for resumes, test-first coding, app releases and more ([SKILLS.md](SKILLS.md)) |
+| **A job-search toolkit** | Website, booking page, ATS-safe resume, proof projects, faster applications |
+
+## Install
+
+Paste one prompt into Claude Code on your Mac: **[INSTALL.md](INSTALL.md)**. It installs the tools, the kit, memory (optional) and Remote Control (optional), checks every step, and ends with a short list of what only you can do.
 
 What the setup produced for me:
 
@@ -12,7 +28,7 @@ What the setup produced for me:
 | Proof projects | [social-commerce-ltv](https://github.com/artur115/social-commerce-ltv) and [marketing-data-reliability](https://github.com/artur115/marketing-data-reliability) |
 | App | [Pillwave](https://pillwave.app), an iPhone medication-reminder app |
 
-## Start here
+## Job search: start here
 
 1. Get **Claude Pro** ($20/month, or $17/month billed yearly; see [claude.com/pricing](https://claude.com/pricing)) and install the Mac app from [claude.com/download](https://claude.com/download).
 2. Open **Claude Code** in the app and start a cloud session.
@@ -37,19 +53,21 @@ Prefer to drive it yourself? Run the prompts in order:
 | 12 | [Weekly routine](prompts/12-weekly-routine.md) | A small loop you repeat every week |
 | 13 | [Outreach with Sellbird](prompts/13-outreach-sellbird.md) (optional) | Short, personal notes to hiring managers at companies hiring for your role, each approved by you |
 | 14 | [New laptop: install everything](prompts/14-new-laptop-all-in-one.md) | One prompt that installs the tools, skills and plugins from this guide on a fresh Mac |
+| 15 | [Memory with claude-mem](prompts/15-memory-claude-mem.md) (on your Mac) | Claude remembers your work between sessions, stored locally |
+| 16 | [Remote Control and long runs](prompts/16-remote-control-always-on.md) (on your Mac) | Steer Mac sessions from your phone; the Mac stays awake |
 
 ## Install my four skills
 
 In Claude Code, run:
 
 ```
-/plugin marketplace add artur115/ai-job-search-setup
-/plugin install job-search-kit@ai-job-search-setup
+/plugin marketplace add artur115/ai-copilot-setup
+/plugin install job-search-kit@ai-copilot-setup
 ```
 
 | Skill | What it does | Say this to use it |
 |---|---|---|
-| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 13, checks each one is done, and keeps a checklist | "help me set up my job search" |
+| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 16, checks each one is done, and keeps a checklist | "help me set up my job search" |
 | [`ats-resume-check`](skills/ats-resume-check/SKILL.md) | Checks a resume PDF for fonts, selectable text and links, and reports what to fix | "check my resume PDF for ATS problems" |
 | [`proof-project`](skills/proof-project/SKILL.md) | Turns one resume claim into a small public project with synthetic data and tests | "build a proof project for this resume line" |
 | [`resume-builder`](skills/resume-builder/SKILL.md) | Writes your resume as one HTML file and prints an ATS-safe PDF with Playwright; includes a template | "build my resume" |
@@ -77,6 +95,7 @@ See [DESIGN-RESOURCES.md](DESIGN-RESOURCES.md): the galleries I use to pick a la
 
 ## Ground rules
 
+- **Keep secrets out of memory.** claude-mem stores what Claude sees in plain text on your Mac. Wrap private text in `<private>…</private>` and never ask Claude to print `.env` files.
 - **Never paste API keys into chat.** Use the secure credential form in the environment settings.
 - **Review before you submit.** Autofill and AI drafts save time; you still read every field.
 - **Keep claims provable.** If a number is on your resume, link a project or write-up that shows the method.

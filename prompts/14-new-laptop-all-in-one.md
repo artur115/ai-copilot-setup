@@ -7,8 +7,8 @@ this guide in one pass, checks each one, and ends with a short list of the steps
 skipped.
 
 ```text
-Set up this Mac for my AI job search in one pass, using
-https://github.com/artur115/ai-job-search-setup (read README.md, SKILLS.md and prompts/01-13 first).
+Set up this Mac with my AI co-pilot setup in one pass, using
+https://github.com/artur115/ai-copilot-setup (read README.md, SKILLS.md and prompts/01-16 first).
 
 RULES
 - First show me the plan: every item below, approximate download size, and free disk space
@@ -21,7 +21,7 @@ RULES
   item | version | installed / already there / skipped / failed.
 - If something fails: one line on why, skip it, continue.
 - The /plugin lines are slash commands. Run each one in Terminal as `claude plugin ...` (for
-  example `claude plugin marketplace add artur115/ai-job-search-setup`) if this Claude Code has
+  example `claude plugin marketplace add artur115/ai-copilot-setup`) if this Claude Code has
   that command; otherwise give me the exact lines to type into Claude Code myself.
 
 CORE: TOOLS
@@ -31,13 +31,19 @@ CORE: TOOLS
 
 CORE: SKILLS AND PLUGINS (in Claude Code)
 4. My job-search kit (setup walkthrough, resume builder, ATS check, proof project):
-     /plugin marketplace add artur115/ai-job-search-setup
-     /plugin install job-search-kit@ai-job-search-setup
+     /plugin marketplace add artur115/ai-copilot-setup
+     /plugin install job-search-kit@ai-copilot-setup
 5. graphify, the knowledge graph (prompts/05):
      pipx install graphifyy && graphify install
 6. Playwright's Chromium, used by the resume builder to print the PDF:
      npx playwright install chromium   (inside my resume repo, once it's cloned)
 7. My repos into ~/Documents: ask me for the list (website, resume, proof projects).
+
+RECOMMENDED: ASK ME FIRST
+7a. Memory between sessions with claude-mem: follow prompts/15 exactly (audit, then I run
+    `CLAUDE_MEM_ONLINE_OPTIN=false npx claude-mem install --provider claude` myself; no
+    account, no trial; telemetry off; two-session memory test).
+7b. Remote Control and long runs: walk me through prompts/16.
 
 OPTIONAL: ASK ME ONE BY ONE (all listed in SKILLS.md, with what each does)
 8.  Build-and-ship skills from glebis/claude-skills (feature-factory, tdd, app-map, app-release):
