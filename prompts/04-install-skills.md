@@ -14,6 +14,6 @@ Record each source repo and commit in .claude/SKILLS-SOURCES.md, commit, and sho
 me how to check the skills loaded.
 ```
 
-Optional, on your Mac: `ecc@ecc` (affaan-m/ECC, the hackathon winner with 327 skills; read its hook settings first), `superpowers@claude-plugins-official`, `mattpocock-skills@claude-plugins-official`, and `andrej-karpathy-skills@karpathy-skills`.
+Optional, on your Mac: **one** coding method, `superpowers@claude-plugins-official`, plus `ponytail@ponytail` for short code. ECC, mattpocock-skills and andrej-karpathy-skills do the same job as superpowers; pick one of them *instead*, never several. See [Why I don't stack coding-style plugins](../SKILLS.md#why-i-dont-stack-coding-style-plugins).
 
-Optional, for app projects: `ponytail@ponytail` (DietrichGebert/ponytail), `expo@claude-plugins-official`, and `app-map` / `app-release` from glebis/claude-skills.
+Optional, for app projects: `expo@claude-plugins-official`, and `app-map` / `app-release` from glebis/claude-skills.

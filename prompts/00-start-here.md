@@ -6,7 +6,8 @@ Paste this into a new Claude Code session (cloud) after you install the Claude a
 I'm job-searching and want to set up an AI-assisted workflow like the one in
 https://github.com/artur115/ai-copilot-setup. I'm a beginner on a MacBook.
 
-Read that repo's README.md, SKILLS.md and the files in prompts/ (01 to 14; 13 is optional).
+Read that repo's README.md, SKILLS.md and the files in prompts/ (01 to 16; 13, 15 and 16
+are optional, and 15 and 16 run only in Claude Code on my Mac).
 Then walk me through them one step at a time:
 - Before each step, tell me in two sentences what it gives me and what it costs.
 - Do the parts you can do yourself. For parts I must do (sign-ups, payments,

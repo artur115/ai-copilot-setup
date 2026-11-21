@@ -1,6 +1,6 @@
 # Every skill and plugin I installed
 
-Six sources live inside my project repos (1 to 6), four plugins are installed on my Mac (7 to 10), and Anthropic's built-in skills come with the account.
+Six sources live inside my project repos (1 to 6), a small non-overlapping set of plugins is installed on my Mac (see [My current set](#my-current-set)), and Anthropic's built-in skills come with the account. Numbers 8 to 10 are alternatives to superpowers, not extras.
 
 A **skill** is a folder with a `SKILL.md` file (and sometimes scripts). Claude reads it only when your request matches its description. A **plugin** bundles skills, slash commands, agents or hooks so they install in one step. A **marketplace** is a GitHub repo that lists plugins.
 
@@ -91,50 +91,98 @@ My four skills for the job search itself. See [README](README.md#install-my-four
 
 ## Plugins installed on my Mac (per computer)
 
+Plugins installed in Claude Code on a Mac live on that Mac only (`claude plugin list` shows them). Install them again on each new laptop. Cloud sessions only get the plugins listed in a repo's `.claude/settings.json`.
+
+### My current set
+
+| Plugin | Job | Install |
+|---|---|---|
+| `superpowers` | **The one coding method:** brainstorm, plan, build test-first, review | `/plugin install superpowers@claude-plugins-official` |
+| `ponytail` | Keeps generated code short | see [4](#4-dietrichgebertponytail) |
+| `agent-skills` | `/spec` `/plan` `/build` `/test` `/review` `/ship`, which run only when you type them | see [3](#3-addyosmaniagent-skills) |
+| `expo` | React Native / Expo apps | see [5](#5-exposkills-through-anthropics-official-marketplace) |
+| `job-search-kit` | This repo's four skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
+| `claude-mem` | Memory between sessions | see below |
+| `cloudflare` | Domains, DNS and deploys | `/plugin install cloudflare@cloudflare` |
+
+Each one does a different job, so their instructions don't compete.
+
+### Why I don't stack coding-style plugins
+
+I used to have ECC, superpowers, mattpocock-skills, andrej-karpathy-skills and the glebis `tdd` plugin all enabled. I removed all but superpowers, because more of them doesn't mean a second opinion:
+
+- **They don't take turns.** Every enabled plugin's instructions go into the same session. Claude reads them as one rulebook; nothing runs "after" another to check its work.
+- **Their rules contradict each other.** "Brainstorm and plan in detail first" (superpowers), "make the smallest change, don't over-plan" (Karpathy), "state facts before the first edit" (ECC's GateGuard hook). Claude picks one each time, so behaviour gets inconsistent.
+- **Several skills match the same request.** Ask "plan this feature" and four planning skills fit. You can't tell which one fires.
+- **It costs more.** Every plugin adds its skill list to every session, and ECC adds hundreds of skills plus hooks on every action.
+
+**A real double-check runs one after another:** Claude writes the change, then a separate review reads the result. Type `/review` (agent-skills) or ask *"review this diff for bugs before I commit"*.
+
+Pick **one** coding method. If you prefer one of the alternatives below, install it **instead of** superpowers, not alongside it.
+
 ### claude-mem: memory between sessions
 [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) (Apache-2.0). Hooks record what Claude does in each session, a small local worker summarizes it into a SQLite database in `~/.claude-mem`, and the next session in the same project starts with that context. The background summaries use your Claude plan (Haiku). Setup and the safe install flags are in [prompts/15](prompts/15-memory-claude-mem.md).
 
 ```bash
 CLAUDE_MEM_ONLINE_OPTIN=false npx claude-mem install --provider claude
+```
+
+```bash
 npx claude-mem telemetry disable
 ```
 
 Don't use the plain `npx claude-mem install`: it pre-selects a paid plan with a card-required trial.
 
+### 7. obra/superpowers (my pick)
+A complete development method built from small skills: brainstorm, write a plan, then build in test-driven steps with reviews. About 15 skills. It already covers test-first work, so I don't also install the glebis `tdd` plugin on my Mac (Pillwave keeps its own copy in `.claude/skills`). Repo: <https://github.com/obra/superpowers>
 
-Plugins installed in the Claude Code app on a Mac live on that Mac only. Install them again on each new laptop.
+```
+/plugin install superpowers@claude-plugins-official
+```
 
-### 7. affaan-m/ECC (Everything Claude Code), the hackathon winner
-The biggest one. Affaan Mustafa won the Anthropic x Forum Ventures hackathon (Sep 2025) and open-sourced his whole setup under MIT. Its README lists **327 skills, 72 agents and 98 commands**, plus hooks, memory, rules and the AgentShield security scanner. Repo: <https://github.com/affaan-m/ECC> (it used to be called everything-claude-code).
+### Alternatives (choose one instead of superpowers)
+
+#### 8. affaan-m/ECC (Everything Claude Code), the hackathon winner
+Affaan Mustafa won the Anthropic x Forum Ventures hackathon (Sep 2025) and open-sourced his whole setup under MIT. Its README lists **327 skills, 72 agents and 98 commands**, plus hooks, memory, rules and the AgentShield security scanner. Repo: <https://github.com/affaan-m/ECC>
 
 ```
 /plugin marketplace add https://github.com/affaan-m/ECC
 /plugin install ecc@ecc
 ```
 
-It adds hooks that change how Claude works. One example is GateGuard, which asks Claude to state facts before its first edit in a session. Read the README's opt-out settings before you install, and don't install all of it if you only need a few skills.
+Its hooks change how Claude works on every action. When I installed it, Claude Code reported that ECC's helper packages were not installed ("its package.json sets overrides, which this install does not apply"), so some hooks may fail. Read its README's setup and opt-out settings first.
 
-### 8. obra/superpowers
-A complete development method built from small skills: brainstorm, write a plan, then build in test-driven steps with reviews. About 15 skills. Repo: <https://github.com/obra/superpowers>
-
-```
-/plugin install superpowers@claude-plugins-official
-```
-
-### 9. mattpocock/skills
-"Skills for real engineers": about 40 small, composable skills by Matt Pocock that you adapt to your own way of working. Repo: <https://github.com/mattpocock/skills>
+#### 9. mattpocock/skills
+About 40 small, composable skills by Matt Pocock that you adapt to your own way of working. Repo: <https://github.com/mattpocock/skills>
 
 ```
 /plugin install mattpocock-skills@claude-plugins-official
 ```
 
-### 10. forrestchang/andrej-karpathy-skills
-One set of guidelines (a CLAUDE.md file and one skill) based on Andrej Karpathy's notes on common LLM coding mistakes: think before coding, keep it simple, change only what was asked, check the result. Repo: <https://github.com/forrestchang/andrej-karpathy-skills>
+#### 10. forrestchang/andrej-karpathy-skills
+One set of guidelines based on Andrej Karpathy's notes on common LLM coding mistakes: think before coding, keep it simple, change only what was asked. Repo: <https://github.com/forrestchang/andrej-karpathy-skills>
 
 ```
 /plugin marketplace add forrestchang/andrej-karpathy-skills
 /plugin install andrej-karpathy-skills@karpathy-skills
 ```
+
+### Clean up a stacked setup
+
+Already installed several of them? This removes the overlapping ones and adds the missing ones. Paste it into Terminal; it is safe to run twice:
+
+```bash
+for p in ecc@ecc mattpocock-skills@claude-plugins-official andrej-karpathy-skills@karpathy-skills tdd@glebis-skills; do
+  if claude plugin list 2>/dev/null | grep -q "$p"; then claude plugin uninstall "$p"; fi
+done
+claude plugin marketplace add artur115/ai-copilot-setup
+for p in superpowers@claude-plugins-official job-search-kit@ai-copilot-setup; do
+  if claude plugin list 2>/dev/null | grep -q "$p"; then echo "already installed: $p"; else claude plugin install "$p"; fi
+done
+claude plugin list
+```
+
+Then restart Claude Code.
 
 ## An outreach tool (not a skill): Sellbird
 
