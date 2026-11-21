@@ -81,15 +81,26 @@ Official Expo skills for React Native: Expo Router UI, data fetching, EAS builds
 /plugin install expo@claude-plugins-official
 ```
 
-### 6. artur115/ai-job-search-setup (this repo)
-My four skills for the job search itself. See [README](README.md#install-my-three-skills).
+### 6. artur115/ai-copilot-setup (this repo)
+My four skills for the job search itself. See [README](README.md#install-my-four-skills).
 
 ```
-/plugin marketplace add artur115/ai-job-search-setup
-/plugin install job-search-kit@ai-job-search-setup
+/plugin marketplace add artur115/ai-copilot-setup
+/plugin install job-search-kit@ai-copilot-setup
 ```
 
 ## Plugins installed on my Mac (per computer)
+
+### claude-mem: memory between sessions
+[thedotmack/claude-mem](https://github.com/thedotmack/claude-mem) (Apache-2.0). Hooks record what Claude does in each session, a small local worker summarizes it into a SQLite database in `~/.claude-mem`, and the next session in the same project starts with that context. The background summaries use your Claude plan (Haiku). Setup and the safe install flags are in [prompts/15](prompts/15-memory-claude-mem.md).
+
+```bash
+CLAUDE_MEM_ONLINE_OPTIN=false npx claude-mem install --provider claude
+npx claude-mem telemetry disable
+```
+
+Don't use the plain `npx claude-mem install`: it pre-selects a paid plan with a card-required trial.
+
 
 Plugins installed in the Claude Code app on a Mac live on that Mac only. Install them again on each new laptop.
 

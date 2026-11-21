@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "ai-job-search-setup",
-  "description": "Skills and prompts for setting up an AI-assisted job search with Claude.",
+  "name": "ai-copilot-setup",
+  "description": "Skills and prompts for setting up a Mac with Claude as an AI co-pilot: memory, Remote Control, skills, and an AI-assisted job search.",
   "owner": { "name": "Artur Kochetkov", "url": "https://github.com/artur115" },
   "plugins": [
     {
       "name": "job-search-kit",
-      "version": "0.1.1",
-      "source": { "source": "github", "repo": "artur115/ai-job-search-setup" },
+      "version": "0.2.0",
+      "source": { "source": "github", "repo": "artur115/ai-copilot-setup" },
       "description": "Four skills: a guided setup walkthrough, a resume builder, an ATS resume check, and a proof-project planner.",
-      "homepage": "https://github.com/artur115/ai-job-search-setup",
+      "homepage": "https://github.com/artur115/ai-copilot-setup",
       "license": "MIT",
       "keywords": ["job-search", "resume", "ats", "portfolio", "setup"]
     }

@@ -4,8 +4,8 @@ See [SKILLS.md](../SKILLS.md) for what each one does. Install only what you'll u
 
 ```text
 Install these into my job-search repo so every cloud session has them:
-1. This repo's plugin:  /plugin marketplace add artur115/ai-job-search-setup
-                        /plugin install job-search-kit@ai-job-search-setup
+1. This repo's plugin:  /plugin marketplace add artur115/ai-copilot-setup
+                        /plugin install job-search-kit@ai-copilot-setup
 2. From glebis/claude-skills, copy tdd and feature-factory into .claude/skills/
    and keep their MIT license file.
 3. addyosmani/agent-skills as a plugin (marketplace addyosmani/agent-skills,
