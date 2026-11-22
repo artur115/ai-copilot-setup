@@ -15,7 +15,7 @@ Open Terminal, go to your home folder (`cd ~`), run `claude`, and paste this:
 
 ```text
 Install the AI co-pilot setup from https://github.com/artur115/ai-copilot-setup on this Mac.
-Read its README.md, INSTALL.md, SKILLS.md and prompts/ (01-16) first.
+Read its README.md, INSTALL.md, SKILLS.md and prompts/ (01-17) first.
 
 RULES
 - Plan first: show every item below, approximate download size, and free disk space
@@ -85,6 +85,12 @@ DO NOT STACK (read SKILLS.md "Why I don't stack coding-style plugins")
    superpowers. Don't install them alongside it. If I ask for one, explain the overlap and
    offer it instead of superpowers, not in addition. If any are already installed, offer
    the clean-up commands from SKILLS.md "Clean up a stacked setup".
+
+MARKETING (optional, ask me first)
+8. marketing-kit: 56 marketing skills, one per job (prompts/17):
+     /plugin install marketing-kit@ai-copilot-setup
+   Don't add zubair-trabzada/ai-marketing-claude or the full nexscope set alongside it;
+   they repeat the same jobs (plugins/marketing-kit/README.md, "Considered, not included").
 
 FINISH WITH
 - A table: item | version | installed / already there / skipped / failed, with this

@@ -1,0 +1,10 @@
+{
+  "name": "marketing-kit",
+  "version": "0.1.0",
+  "description": "56 marketing skills with one skill per job: positioning, copy, social, influencers, launches, ads, SEO, analytics, email and SMS, plus TikTok Shop and Etsy. Curated from three MIT repos so no two skills answer the same request.",
+  "author": { "name": "Artur Kochetkov", "url": "https://arturkochetkov.dev" },
+  "homepage": "https://github.com/artur115/ai-copilot-setup/tree/main/plugins/marketing-kit",
+  "repository": "https://github.com/artur115/ai-copilot-setup",
+  "license": "MIT",
+  "skills": "./skills"
+}

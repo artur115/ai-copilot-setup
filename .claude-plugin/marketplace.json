@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "ai-copilot-setup",
-  "description": "Skills and prompts for setting up a Mac with Claude as an AI co-pilot: memory, Remote Control, skills, and an AI-assisted job search.",
+  "description": "Skills and prompts for setting up a Mac with Claude as an AI co-pilot: memory, Remote Control, skills, an AI-assisted job search, and a marketing kit.",
   "owner": { "name": "Artur Kochetkov", "url": "https://github.com/artur115" },
   "plugins": [
     {
@@ -12,6 +12,15 @@
       "homepage": "https://github.com/artur115/ai-copilot-setup",
       "license": "MIT",
       "keywords": ["job-search", "resume", "ats", "portfolio", "setup"]
+    },
+    {
+      "name": "marketing-kit",
+      "version": "0.1.0",
+      "source": "./plugins/marketing-kit",
+      "description": "56 marketing skills, one per job: positioning, copy, social, influencers, launches, ads, SEO, analytics, email and SMS, plus TikTok Shop and Etsy.",
+      "homepage": "https://github.com/artur115/ai-copilot-setup/tree/main/plugins/marketing-kit",
+      "license": "MIT",
+      "keywords": ["marketing", "social", "influencer", "email", "seo", "ads", "tiktok-shop", "etsy"]
     }
   ]
 }
