@@ -6,6 +6,7 @@ Contact details are used only in application forms and job-site accounts.
 ## Contact for forms (application forms and ATS accounts only)
 - Email: {{EMAIL}}
 - Phone: {{PHONE}}
+- Mailing address (optional; some payroll-style job sites require it): {{ADDRESS}}
 
 ## Identity and logistics
 - Name: {{NAME}}

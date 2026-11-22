@@ -19,6 +19,7 @@ user must give themselves (contact details, legal answers, demographics).
 
 ## Round 3: contact (typed by the user)
 1. Email and phone to put on application forms. Explain: stored only in your private repo and used only in forms.
+2. Optional: street address, city, county and zip (some job sites won't submit without them). "Skip" is fine: those jobs get logged for you.
 
 ## Round 4: experience numbers (for "how many years of X" questions)
 1. Years in the field overall, years managing people, largest team.
