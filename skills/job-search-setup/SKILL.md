@@ -5,7 +5,7 @@ description: Walks a beginner through setting up an AI-assisted job search with 
 
 # Job search setup
 
-Guide the user through the steps in this repo's `prompts/` folder (01 to 12, plus the optional 13, 15 and 16). Step 14 is a one-shot install for a new Mac; offer it when the user is setting up a fresh laptop. Steps 15 (memory with claude-mem) and 16 (Remote Control and long runs) set up the Mac itself; offer them after step 04, and run them only in Claude Code on the user's Mac. In a cloud session, skip them when choosing the next step and remind the user to do them later on the Mac. The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
+Guide the user through the steps in this repo's `prompts/` folder (01 to 12, plus the optional 13, 15 and 16, and 17 once the resume and LinkedIn are done). Step 14 is a one-shot install for a new Mac; offer it when the user is setting up a fresh laptop. Steps 15 (memory with claude-mem) and 16 (Remote Control and long runs) set up the Mac itself; offer them after step 04, and run them only in Claude Code on the user's Mac. In a cloud session, skip them when choosing the next step and remind the user to do them later on the Mac. The user is usually a beginner on a Mac, so explain plainly and do one step at a time.
 
 ## How to run a step
 
@@ -38,16 +38,17 @@ Create `SETUP-CHECKLIST.md` on first use if it doesn't exist:
 - [ ] 13 Outreach with Sellbird (optional)
 - [ ] 15 Memory between sessions with claude-mem (on the Mac only, optional)
 - [ ] 16 Remote Control and long runs (on the Mac only, optional)
+- [ ] 17 Daily auto-apply (on the Mac only; job-autopilot skill)
 ```
 
-On "what's next?", read the checklist and continue with the first unticked step that can run here (skip 15 and 16 in a cloud session).
+On "what's next?", read the checklist and continue with the first unticked step that can run here (skip 15, 16 and 17 in a cloud session).
 
 ## Rules
 
 - Plugins: recommend one coding method (superpowers) plus non-overlapping helpers, as in SKILLS.md "My current set". Don't install ECC, mattpocock-skills, andrej-karpathy-skills or tdd@glebis-skills alongside superpowers; explain the overlap instead.
 - Never ask the user to paste a password, API key or token into chat. Keys go through the environment's secure credential form.
 - Don't write the user's email address or phone number into files or web requests unless they type it in the same message.
-- Don't send email, submit applications, buy anything or publish anything without the user's explicit OK for that action.
+- Don't send email, submit applications, buy anything or publish anything without the user's explicit OK for that action. Step 17 records that OK once, in the user's CLAUDE.md, for the scheduled runs.
 - claude-mem: never run the plain `npx claude-mem install`, which pre-selects a paid plan with a card-required trial. Use `--provider claude` with `CLAUDE_MEM_ONLINE_OPTIN=false` as in prompts/15, and let the user run it.
 - Cloud sessions can't reach the user's browser or local files. Steps that need them (Claude in Chrome, LinkedIn) run on the user's Mac.
 - Prices change. Say the price is approximate and point to the official pricing page.

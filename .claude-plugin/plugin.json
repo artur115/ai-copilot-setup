@@ -1,7 +1,7 @@
 {
   "name": "job-search-kit",
-  "version": "0.2.0",
-  "description": "A guided setup walkthrough, a resume builder, an ATS resume check, and a proof-project planner for an AI-assisted job search.",
+  "version": "0.3.0",
+  "description": "A guided setup walkthrough, a resume builder, an ATS resume check, a proof-project planner, and a job autopilot that applies to jobs on a daily schedule.",
   "author": { "name": "Artur Kochetkov", "url": "https://arturkochetkov.dev" },
   "homepage": "https://github.com/artur115/ai-copilot-setup",
   "repository": "https://github.com/artur115/ai-copilot-setup",
