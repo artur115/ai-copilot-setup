@@ -43,7 +43,7 @@ The user may not be technical. Use plain words, one step at a time, and do every
 |---|---|---|
 | `{{SUBMIT_RULE}}` | submit alone | Submit the application. |
 | | shortlist | Don't submit: fill everything up to the last page, log "Ready - waiting for your OK", and list it in the summary. |
-| `{{LINKEDIN_RULE}}` | send | 1st-degree connection: send a 3-4 sentence message. Otherwise a connection request with a note under 200 characters (without a note if LinkedIn won't allow one). Max 15 requests and 20 messages a day, 80 requests a week, one person per job, nobody twice in 7 days, no InMail. Stop for the day at any LinkedIn warning and add it to the playbook. |
+| `{{LINKEDIN_RULE}}` | send | Notes and messages you write from the resume are approved: send them, don't hold them for review. 1st-degree connection: send a 3-4 sentence message. Otherwise a connection request with a note under 200 characters (without a note if LinkedIn won't allow one). Max 15 requests and 20 messages a day, 80 requests a week, one person per job, nobody twice in 7 days, no InMail. Stop for the day at any LinkedIn warning and add it to the playbook. |
 | | draft only | Don't send anything on LinkedIn; put the suggested note in the row's Next step. |
 | | no | Skip LinkedIn outreach. |
 | `{{ACCOUNT_RULE}}` | yes | Create one if needed. Prefer Sign in with Google/LinkedIn; otherwise PROFILE.md email + a random 20+ character password saved only with `security add-internet-password -s <domain> -a <email> -w '<password>' -U` (read back with `security find-internet-password -s <domain> -w`). Verification emails: open via Gmail. Never write a password anywhere else. |
@@ -51,8 +51,11 @@ The user may not be technical. Use plain words, one step at a time, and do every
 | `{{HYBRID_RULE}}` | hybrid OK | apply and note "Hybrid (<city>) - ask about remote" |
 | | not OK | skip |
 
-`{{PDF_NAME}}` is `First_Last.pdf`. `{{HARD_SKIPS}}` lists their round-1 skips (e.g. "contract; security clearance;
+`{{PDF_NAME}}` is `First_Last.pdf`. An optional answer the user skipped (e.g. `{{ADDRESS}}`) becomes "not given". `{{HARD_SKIPS}}` lists their round-1 skips (e.g. "contract; security clearance;
 fully on-site outside <their city>"). Before saving, `grep -c "{{" applications/ROUTINE.md applications/PROFILE.md` must print 0 for both.
+
+If `applications/PROFILE.md` already exists, the user set this up before: read it, ask only the questions whose
+answers are missing, and update files and the existing scheduled task instead of creating a second one.
 
 ### Step 5: permission lines for CLAUDE.md
 Write only what the user chose in round 6 of the questions, dated, for example:
@@ -60,7 +63,7 @@ Write only what the user chose in round 6 of the questions, dated, for example:
 - Job applications: you may submit them without asking (<name>'s OK, <date>) when the role matches applications/ROUTINE.md.
 - Application forms and ATS accounts may use the email and phone in applications/PROFILE.md; nowhere else.
 - ATS accounts: may be created. Prefer Sign in with Google/LinkedIn; otherwise a random password saved only in the macOS Keychain.
-- LinkedIn: may send connection requests and messages to the recruiter or hiring manager of a job applied to, within ROUTINE.md limits. No InMail, nothing paid.
+- LinkedIn: may send connection requests and messages, written by Claude from the resume, to the recruiter or hiring manager of a job applied to, within ROUTINE.md limits. Send them; don't hold them for review. No InMail, nothing paid.
 - Recruiter emails stay Gmail drafts, never sent.
 ```
 The contact details go into PROFILE.md only when the user types them in the chat during setup.
@@ -109,6 +112,11 @@ in 5 lines what it did and when it runs next.
 | Resume upload refused | Run tried a path it isn't allowed to read | Stage the file first (playbook) |
 | Few applications, many "weak fit" skips | Skip rules too strict | Only hard skips; tailor the resume instead |
 | Sheet links point to search pages | No link rule | Direct posting URL required |
+| LinkedIn returns HTTP 429, then blocks the day | Too many fast or parallel job fetches | ~20 sequential fetches per run; ATS board APIs for the rest |
+| 0 LinkedIn messages sent "for your review" | Permission line didn't say run-written notes are OK | Use the CLAUDE.md line above |
+| Same titles searched every run, others never | No rotation | Report "Not done"; next run starts there |
+| "Submitted" but no confirmation email | Simplify popup, or a bot check stopped it | Trust only the confirmation page or email |
+| Several jobs "Needs manual apply (account)" | Run couldn't create a password account | Expected on some big-company sites; the user finishes them in one sitting with the saved resumes |
 | Answers with numbers not on the resume | No source rule | Resume and PROFILE.md only; generated answers are logged for review |
 
 ## Honesty and safety rules (always)
