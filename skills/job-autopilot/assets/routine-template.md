@@ -15,6 +15,14 @@ If another Mac also runs this task: right before applying, re-read the sheet; if
 it; otherwise add its row at once with Status "Applying (<`scutil --get ComputerName`>)" and update it when done.
 Rows stuck on "Applying" for 2+ hours can be retried. Daily caps are counted from today's sheet rows.
 
+Chrome tabs: work in ONE tab group named "Job autopilot". At the start, close tabs left in groups with that name
+from earlier runs and reuse one group. Keep at most 3 tabs open, close each job's tab when it's done, and close
+every tab this run opened at the end. Never touch other tab groups or tabs I opened myself.
+
+0. Kind of run: the last scheduled run of the day (after 6 PM local) is the CATCH-UP run. It applies to nothing
+   new and works only the "Not done" lists in today's reports: unscreened leads, missed searches, LinkedIn
+   outreach for earlier applications, and step 5. Other runs do steps 1-4, spend at most half their time
+   searching (screen, then apply, then outreach), and list what they didn't reach under "Not done".
 1. Find jobs on both sites, posted in the past week, newest first; each run continues where the last one stopped.
    - LinkedIn Jobs: recommendations, then searches for: {{TITLES}}. Filters: {{LOCATION_FILTERS}}.
    - Built In (builtin.com/jobs): the same searches and locations. Apply on the company's own site it links to.

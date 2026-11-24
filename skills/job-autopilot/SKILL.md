@@ -88,7 +88,8 @@ The repo must be private (it holds contact details and form answers).
 
 ### Step 9: the scheduled task
 - Name "Job autopilot", working folder `~/Documents`, permission mode **auto**.
-- Schedule: the times from round 6 (at least 2 a day, for example 8:17 AM and 4:17 PM local; avoid :00).
+- Schedule: the times from round 6 (at least 2 a day, for example 8:17 AM and 4:17 PM local; avoid :00), plus a
+  catch-up run after 6 PM (for example 7:17 PM) that finishes what the day's runs left undone.
 - Prompt: the whole of `applications/ROUTINE.md`.
 - If you have a tool that creates scheduled tasks, use it. Otherwise give the user the clicks: Claude app → Scheduled
   (or Routines) → New task → paste the prompt → set folder, times and permission mode → Save.
@@ -115,6 +116,8 @@ in 5 lines what it did and when it runs next.
 | LinkedIn returns HTTP 429, then blocks the day | Too many fast or parallel job fetches | ~20 sequential fetches per run; ATS board APIs for the rest |
 | 0 LinkedIn messages sent "for your review" | Permission line didn't say run-written notes are OK | Use the CLAUDE.md line above |
 | Same titles searched every run, others never | No rotation | Report "Not done"; next run starts there |
+| Runs end with only searching done; outreach and cleanup never happen | Too much scope per run | Half the time cap on searching; evening catch-up run |
+| Chrome fills up with old "Job autopilot" tab groups | Each run opens a new group and leaves it | Routine reuses one group and closes its tabs at the end |
 | "Submitted" but no confirmation email | Simplify popup, or a bot check stopped it | Trust only the confirmation page or email |
 | Several jobs "Needs manual apply (account)" | Run couldn't create a password account | Expected on some big-company sites; the user finishes them in one sitting with the saved resumes |
 | Answers with numbers not on the resume | No source rule | Resume and PROFILE.md only; generated answers are logged for review |
