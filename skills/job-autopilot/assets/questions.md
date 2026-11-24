@@ -13,7 +13,7 @@ user must give themselves (contact details, legal answers, demographics).
 
 ## Round 2: work basics
 1. Authorized to work in the US? Need visa sponsorship now or later?
-2. Willing to relocate? Travel up to how much?
+2. Willing to relocate, and to which cities? (Jobs in those cities then count as local.) Travel up to how much?
 3. Earliest start / notice period.
 4. Links: LinkedIn URL, website, GitHub, portfolio.
 
@@ -35,6 +35,7 @@ user must give themselves (contact details, legal answers, demographics).
 1. Submit applications without asking you? (yes / no: send me a daily shortlist instead)
 2. LinkedIn: send connection requests and messages to recruiters? (send / draft only / no)
 3. Create accounts on job sites when needed? (yes / no)
-4. Runs per day and times (at least 2; suggest 8:17 AM and 4:17 PM local; 3 runs adds 12:17 PM).
+4. Runs per day and times (at least 2; suggest 8:17 AM and 4:17 PM local; 3 runs adds 12:17 PM), plus an evening
+   catch-up run (suggest 7:17 PM).
 5. Applications per run (suggest 15; LinkedIn Easy Apply is capped at 25 a day by the routine).
 6. Tracker: create a new Google Sheet, or use an existing one (paste the link)?
