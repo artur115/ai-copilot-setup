@@ -62,7 +62,7 @@ CORE
        - GitHub CLI, the macOS installer from cli.github.com             -> gh --version
      If I insist on Homebrew anyway, warn me about the above first (on Intel it installs
      to /usr/local).
-2. The kit's five skills (setup walkthrough, resume builder, ATS check, proof project, job autopilot):
+2. The kit's six skills (setup walkthrough, resume builder, ATS check, proof project, job autopilot setup and run):
      /plugin marketplace add artur115/ai-copilot-setup
      /plugin install job-search-kit@ai-copilot-setup
 3. graphify, the code map (prompts/05): pipx install graphifyy && graphify install

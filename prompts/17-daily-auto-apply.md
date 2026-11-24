@@ -18,12 +18,17 @@ Ask me all the questions once, help me turn on the connectors and Chrome permiss
 create the scheduled task, and do the first run with me watching.
 ```
 
+You never copy anything by hand: your Mac pulls changes to your files every 30 minutes and plugin updates every
+morning, so improvements reach your runs on their own.
+
 When it's done you'll have:
 
 | Piece | Where |
 |---|---|
 | Your answers for every application form | `applications/PROFILE.md` in your private job-search repo |
-| The daily routine | `applications/ROUTINE.md` and a scheduled task in the Claude app |
+| Your choices (titles, cities, pay floor, what Claude may do alone) | `applications/SETTINGS.md`: edit any time, the next run uses it |
+| Links you want checked (posts, lists, jobs) | `applications/LEADS.md`: paste them there |
+| The scheduled task | One line that never changes; the run steps come from the plugin and update themselves |
 | What it learns from each run | `applications/PLAYBOOK.md` |
 | Every application, link and recruiter | Your "Job Applications" Google Sheet |
 | A report after each run | `applications/daily/` |

@@ -82,7 +82,7 @@ Official Expo skills for React Native: Expo Router UI, data fetching, EAS builds
 ```
 
 ### 6. artur115/ai-copilot-setup (this repo)
-My five skills for the job search itself. See [README](README.md#install-my-five-skills).
+My six skills for the job search itself. See [README](README.md#install-my-six-skills).
 
 ```
 /plugin marketplace add artur115/ai-copilot-setup
@@ -101,7 +101,7 @@ Plugins installed in Claude Code on a Mac live on that Mac only (`claude plugin 
 | `ponytail` | Keeps generated code short | see [4](#4-dietrichgebertponytail) |
 | `agent-skills` | `/spec` `/plan` `/build` `/test` `/review` `/ship`, which run only when you type them | see [3](#3-addyosmaniagent-skills) |
 | `expo` | React Native / Expo apps | see [5](#5-exposkills-through-anthropics-official-marketplace) |
-| `job-search-kit` | This repo's five skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
+| `job-search-kit` | This repo's six skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
 | `claude-mem` | Memory between sessions | see below |
 | `cloudflare` | Domains, DNS and deploys | `/plugin install cloudflare@cloudflare` |
 

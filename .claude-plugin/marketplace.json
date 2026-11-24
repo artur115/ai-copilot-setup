@@ -6,9 +6,9 @@
   "plugins": [
     {
       "name": "job-search-kit",
-      "version": "0.3.2",
+      "version": "0.4.0",
       "source": { "source": "github", "repo": "artur115/ai-copilot-setup" },
-      "description": "Five skills: a guided setup walkthrough, a resume builder, an ATS resume check, a proof-project planner, and a daily job autopilot.",
+      "description": "Six skills: a guided setup walkthrough, a resume builder, an ATS resume check, a proof-project planner, and a daily job autopilot (setup and run).",
       "homepage": "https://github.com/artur115/ai-copilot-setup",
       "license": "MIT",
       "keywords": ["job-search", "resume", "ats", "portfolio", "setup", "auto-apply"]

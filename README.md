@@ -1,6 +1,6 @@
 # AI co-pilot setup
 
-Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), five small skills of my own, and the design sites I use for web and app ideas.
+Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), six small skills of my own, and the design sites I use for web and app ideas.
 
 *Formerly `ai-job-search-setup`. Old links redirect here.*
 
@@ -57,7 +57,7 @@ Prefer to drive it yourself? Run the prompts in order:
 | 16 | [Remote Control and long runs](prompts/16-remote-control-always-on.md) (on your Mac) | Steer Mac sessions from your phone; the Mac stays awake |
 | 17 | [Daily auto-apply](prompts/17-daily-auto-apply.md) (on your Mac) | Claude applies to matching jobs on its own twice a day or more, contacts recruiters and keeps your tracker sheet up to date |
 
-## Install my five skills
+## Install my six skills
 
 In Claude Code, run:
 
@@ -72,6 +72,7 @@ In Claude Code, run:
 | [`ats-resume-check`](skills/ats-resume-check/SKILL.md) | Checks a resume PDF for fonts, selectable text and links, and reports what to fix | "check my resume PDF for ATS problems" |
 | [`proof-project`](skills/proof-project/SKILL.md) | Turns one resume claim into a small public project with synthetic data and tests | "build a proof project for this resume line" |
 | [`job-autopilot`](skills/job-autopilot/SKILL.md) | Asks you its questions once, sets up connectors and Chrome, then applies to jobs on LinkedIn and Built In at least twice a day with a tailored resume, messages recruiters and logs it all in a Google Sheet | "set up job autopilot" |
+| [`job-autopilot-run`](skills/job-autopilot-run/SKILL.md) | One scheduled run: the steps every run follows, updated with the plugin so nobody re-pastes a prompt | runs on its own; or "run job autopilot now" |
 | [`resume-builder`](skills/resume-builder/SKILL.md) | Writes your resume as one HTML file and prints an ATS-safe PDF with Playwright; includes a template | "build my resume" |
 
 ## Every skill and plugin I installed
