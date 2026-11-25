@@ -18,4 +18,4 @@ Optional, on your Mac: **one** coding method, `superpowers@claude-plugins-offici
 
 Optional, for app projects: `expo@claude-plugins-official`, and `app-map` / `app-release` from glebis/claude-skills.
 
-Optional, for marketing a product or brand: `marketing-kit@ai-copilot-setup`, 56 skills with one per job. Setup and first prompt: [prompts/17](17-marketing-kit.md).
+Optional, for marketing a product or brand: `marketing-kit@ai-copilot-setup`, 56 skills with one per job. Setup and first prompt: [prompts/18](18-marketing-kit.md).

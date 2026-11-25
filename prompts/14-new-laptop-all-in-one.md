@@ -8,7 +8,7 @@ skipped.
 
 ```text
 Set up this Mac with my AI co-pilot setup in one pass, using
-https://github.com/artur115/ai-copilot-setup (read README.md, SKILLS.md and prompts/01-17 first).
+https://github.com/artur115/ai-copilot-setup (read README.md, SKILLS.md and prompts/01-18 first).
 
 RULES
 - First show me the plan: every item below, approximate download size, and free disk space
@@ -95,7 +95,7 @@ OPTIONAL: THE CODING SET (ask once; these don't overlap, see SKILLS.md)
 14. Sellbird for outreach (prompts/13): only clone and install, approval mode, no mailbox.
 
 OPTIONAL: MARKETING (ask me first)
-15. marketing-kit, 56 marketing skills with one skill per job (prompts/17):
+15. marketing-kit, 56 marketing skills with one skill per job (prompts/18):
       /plugin install marketing-kit@ai-copilot-setup
     Not alongside zubair-trabzada/ai-marketing-claude or the full nexscope set: same jobs.
 

@@ -1,4 +1,4 @@
-# 17 · Marketing kit
+# 18 · Marketing kit
 
 56 marketing skills with one skill per job, curated from three MIT repos so they don't compete or contradict each other. Details and sources: [plugins/marketing-kit](../plugins/marketing-kit/README.md).
 

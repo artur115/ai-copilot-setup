@@ -15,7 +15,7 @@ Open Terminal, go to your home folder (`cd ~`), run `claude`, and paste this:
 
 ```text
 Install the AI co-pilot setup from https://github.com/artur115/ai-copilot-setup on this Mac.
-Read its README.md, INSTALL.md, SKILLS.md and prompts/ (01-17) first.
+Read its README.md, INSTALL.md, SKILLS.md and prompts/ (01-18) first.
 
 RULES
 - Plan first: show every item below, approximate download size, and free disk space
@@ -62,7 +62,7 @@ CORE
        - GitHub CLI, the macOS installer from cli.github.com             -> gh --version
      If I insist on Homebrew anyway, warn me about the above first (on Intel it installs
      to /usr/local).
-2. The kit's four skills (setup walkthrough, resume builder, ATS check, proof project):
+2. The kit's five skills (setup walkthrough, resume builder, ATS check, proof project, job autopilot):
      /plugin marketplace add artur115/ai-copilot-setup
      /plugin install job-search-kit@ai-copilot-setup
 3. graphify, the code map (prompts/05): pipx install graphifyy && graphify install
@@ -87,7 +87,7 @@ DO NOT STACK (read SKILLS.md "Why I don't stack coding-style plugins")
    the clean-up commands from SKILLS.md "Clean up a stacked setup".
 
 MARKETING (optional, ask me first)
-8. marketing-kit: 56 marketing skills, one per job (prompts/17):
+8. marketing-kit: 56 marketing skills, one per job (prompts/18):
      /plugin install marketing-kit@ai-copilot-setup
    Don't add zubair-trabzada/ai-marketing-claude or the full nexscope set alongside it;
    they repeat the same jobs (plugins/marketing-kit/README.md, "Considered, not included").

@@ -82,7 +82,7 @@ Official Expo skills for React Native: Expo Router UI, data fetching, EAS builds
 ```
 
 ### 6. artur115/ai-copilot-setup (this repo)
-My four skills for the job search itself. See [README](README.md#install-my-four-skills).
+My five skills for the job search itself. See [README](README.md#install-my-five-skills).
 
 ```
 /plugin marketplace add artur115/ai-copilot-setup
@@ -101,7 +101,7 @@ Plugins installed in Claude Code on a Mac live on that Mac only (`claude plugin 
 | `ponytail` | Keeps generated code short | see [4](#4-dietrichgebertponytail) |
 | `agent-skills` | `/spec` `/plan` `/build` `/test` `/review` `/ship`, which run only when you type them | see [3](#3-addyosmaniagent-skills) |
 | `expo` | React Native / Expo apps | see [5](#5-exposkills-through-anthropics-official-marketplace) |
-| `job-search-kit` | This repo's four skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
+| `job-search-kit` | This repo's five skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
 | `marketing-kit` | Marketing: one skill per job | see [11](#11-marketing-kit-this-repo) |
 | `claude-mem` | Memory between sessions | see below |
 | `cloudflare` | Domains, DNS and deploys | `/plugin install cloudflare@cloudflare` |
@@ -202,7 +202,7 @@ Then restart Claude Code.
 /plugin install marketing-kit@ai-copilot-setup
 ```
 
-Then: *"Set up my product marketing context."* Prompt: [prompts/17](prompts/17-marketing-kit.md).
+Then: *"Set up my product marketing context."* Prompt: [prompts/18](prompts/18-marketing-kit.md).
 
 I checked it against every plugin above: no shared skill names, no hooks, and the two near-overlaps (`launch`, `aso`) now name their engineering counterparts. Details: [Checked against the rest of this setup](plugins/marketing-kit/README.md#checked-against-the-rest-of-this-setup).
 

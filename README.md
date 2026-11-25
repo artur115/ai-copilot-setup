@@ -1,6 +1,6 @@
 # AI co-pilot setup
 
-Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), four small skills of my own, a curated marketing kit, and the design sites I use for web and app ideas.
+Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), five small skills of my own, a curated marketing kit, and the design sites I use for web and app ideas.
 
 *Formerly `ai-job-search-setup`. Old links redirect here.*
 
@@ -13,7 +13,7 @@ Set up a MacBook with Claude as your AI co-pilot: it remembers your work between
 | **Remote Control** | Start and steer sessions on your Mac from your phone ([prompt 16](prompts/16-remote-control-always-on.md)) |
 | **Skills and plugins** | Tested recipes for resumes, test-first coding, app releases and more ([SKILLS.md](SKILLS.md)) |
 | **A job-search toolkit** | Website, booking page, ATS-safe resume, proof projects, faster applications |
-| **A marketing kit** | 56 marketing skills, one per job, that read one shared brand profile ([prompt 17](prompts/17-marketing-kit.md)) |
+| **A marketing kit** | 56 marketing skills, one per job, that read one shared brand profile ([prompt 18](prompts/18-marketing-kit.md)) |
 
 ## Install
 
@@ -56,9 +56,10 @@ Prefer to drive it yourself? Run the prompts in order:
 | 14 | [New laptop: install everything](prompts/14-new-laptop-all-in-one.md) | One prompt that installs the tools, skills and plugins from this guide on a fresh Mac |
 | 15 | [Memory with claude-mem](prompts/15-memory-claude-mem.md) (on your Mac) | Claude remembers your work between sessions, stored locally |
 | 16 | [Remote Control and long runs](prompts/16-remote-control-always-on.md) (on your Mac) | Steer Mac sessions from your phone; the Mac stays awake |
-| 17 | [Marketing kit](prompts/17-marketing-kit.md) (optional) | One brand profile, then social, creators, launches, email and ads, one skill per job |
+| 17 | [Daily auto-apply](prompts/17-daily-auto-apply.md) (on your Mac) | Claude applies to matching jobs on its own twice a day or more, contacts recruiters and keeps your tracker sheet up to date |
+| 18 | [Marketing kit](prompts/18-marketing-kit.md) (optional) | One brand profile, then social, creators, launches, email and ads, one skill per job |
 
-## Install my four skills
+## Install my five skills
 
 In Claude Code, run:
 
@@ -69,9 +70,10 @@ In Claude Code, run:
 
 | Skill | What it does | Say this to use it |
 |---|---|---|
-| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 16, checks each one is done, and keeps a checklist | "help me set up my job search" |
+| [`job-search-setup`](skills/job-search-setup/SKILL.md) | Walks you through steps 01 to 17, checks each one is done, and keeps a checklist | "help me set up my job search" |
 | [`ats-resume-check`](skills/ats-resume-check/SKILL.md) | Checks a resume PDF for fonts, selectable text and links, and reports what to fix | "check my resume PDF for ATS problems" |
 | [`proof-project`](skills/proof-project/SKILL.md) | Turns one resume claim into a small public project with synthetic data and tests | "build a proof project for this resume line" |
+| [`job-autopilot`](skills/job-autopilot/SKILL.md) | Asks you its questions once, sets up connectors and Chrome, then applies to jobs on LinkedIn and Built In at least twice a day with a tailored resume, messages recruiters and logs it all in a Google Sheet | "set up job autopilot" |
 | [`resume-builder`](skills/resume-builder/SKILL.md) | Writes your resume as one HTML file and prints an ATS-safe PDF with Playwright; includes a template | "build my resume" |
 
 ## Marketing kit
