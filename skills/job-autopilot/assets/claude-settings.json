@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude-in-chrome",
+      "Read",
+      "Edit",
+      "Write",
+      "Bash(scutil --get ComputerName)",
+      "Bash(security add-internet-password:*)",
+      "Bash(security find-internet-password:*)",
+      "Bash(python3:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\":*)"
+    ]
+  }
+}
