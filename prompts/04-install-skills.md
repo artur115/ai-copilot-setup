@@ -17,3 +17,5 @@ me how to check the skills loaded.
 Optional, on your Mac: **one** coding method, `superpowers@claude-plugins-official`, plus `ponytail@ponytail` for short code. ECC, mattpocock-skills and andrej-karpathy-skills do the same job as superpowers; pick one of them *instead*, never several. See [Why I don't stack coding-style plugins](../SKILLS.md#why-i-dont-stack-coding-style-plugins).
 
 Optional, for app projects: `expo@claude-plugins-official`, and `app-map` / `app-release` from glebis/claude-skills.
+
+Optional, for marketing a product or brand: `marketing-kit@ai-copilot-setup`, 56 skills with one per job. Setup and first prompt: [prompts/18](18-marketing-kit.md).
