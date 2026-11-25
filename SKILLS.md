@@ -1,6 +1,6 @@
 # Every skill and plugin I installed
 
-Six sources live inside my project repos (1 to 6), a small non-overlapping set of plugins is installed on my Mac (see [My current set](#my-current-set)), and Anthropic's built-in skills come with the account. Numbers 8 to 10 are alternatives to superpowers, not extras.
+Six sources live inside my project repos (1 to 6), a small non-overlapping set of plugins is installed on my Mac (see [My current set](#my-current-set)), and Anthropic's built-in skills come with the account. Numbers 8 to 10 are alternatives to superpowers, not extras. Number 11 is the marketing kit, curated from three more repos.
 
 A **skill** is a folder with a `SKILL.md` file (and sometimes scripts). Claude reads it only when your request matches its description. A **plugin** bundles skills, slash commands, agents or hooks so they install in one step. A **marketplace** is a GitHub repo that lists plugins.
 
@@ -102,6 +102,7 @@ Plugins installed in Claude Code on a Mac live on that Mac only (`claude plugin 
 | `agent-skills` | `/spec` `/plan` `/build` `/test` `/review` `/ship`, which run only when you type them | see [3](#3-addyosmaniagent-skills) |
 | `expo` | React Native / Expo apps | see [5](#5-exposkills-through-anthropics-official-marketplace) |
 | `job-search-kit` | This repo's five skills | see [6](#6-artur115ai-copilot-setup-this-repo) |
+| `marketing-kit` | Marketing: one skill per job | see [11](#11-marketing-kit-this-repo) |
 | `claude-mem` | Memory between sessions | see below |
 | `cloudflare` | Domains, DNS and deploys | `/plugin install cloudflare@cloudflare` |
 
@@ -183,6 +184,27 @@ claude plugin list
 ```
 
 Then restart Claude Code.
+
+## Marketing skills
+
+### 11. marketing-kit (this repo)
+56 marketing skills in one plugin, at [plugins/marketing-kit](plugins/marketing-kit/README.md). I read five marketing skill repos and kept one skill per job, for the same reason I don't stack coding plugins:
+
+| From | Kept | Left out |
+|---|---|---|
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) (MIT, 61k stars) | 50 of 53 skills: `product-marketing` (the brand profile every other skill reads), `copywriting`, `social`, `influencer-marketing`, `launch`, `offers`, `ads`, `ad-creative`, `seo-audit`, `analytics` and more | `emails`, `sms`, `cold-email`: the email bible does these in more depth |
+| [CosmoBlk/email-marketing-bible](https://github.com/CosmoBlk/email-marketing-bible) (MIT) | The whole skill and its 16 reference files | Nothing |
+| [nexscope-ai/eCommerce-Skills](https://github.com/nexscope-ai/eCommerce-Skills) (MIT) | 5 of 162: `tiktok-shop-ads`, `tiktok-shop-listing-optimization`, `tiktok-shop-affiliate-program`, `tiktok-shop-analytics`, `etsy-seo` | 88 are short placeholders with no guidance; the larger general ones repeat corey |
+| [irinabuht12-oss/marketing-skills](https://github.com/irinabuht12-oss/marketing-skills) | Not bundled: no license file | Install it yourself once you run paid ads (skills only; its guide also adds a third-party ad-account connector) |
+| [zubair-trabzada/ai-marketing-claude](https://github.com/zubair-trabzada/ai-marketing-claude) | Not bundled | Its `/market` reports repeat corey's jobs; use it instead of the kit, not with it |
+
+```
+/plugin install marketing-kit@ai-copilot-setup
+```
+
+Then: *"Set up my product marketing context."* Prompt: [prompts/18](prompts/18-marketing-kit.md).
+
+I checked it against every plugin above: no shared skill names, no hooks, and the two near-overlaps (`launch`, `aso`) now name their engineering counterparts. Details: [Checked against the rest of this setup](plugins/marketing-kit/README.md#checked-against-the-rest-of-this-setup).
 
 ## An outreach tool (not a skill): Sellbird
 

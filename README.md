@@ -1,6 +1,6 @@
 # AI co-pilot setup
 
-Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), five small skills of my own, and the design sites I use for web and app ideas.
+Set up a MacBook with Claude as your AI co-pilot: it remembers your work between sessions, runs long tasks you can steer from your phone, and helps you run a job search from start to finish. This is how I set mine up, written so a friend can repeat it. You get one install prompt, copy-paste prompts for every step, a list of every skill and plugin I use (with the GitHub repo each came from), five small skills of my own, a curated marketing kit, and the design sites I use for web and app ideas.
 
 *Formerly `ai-job-search-setup`. Old links redirect here.*
 
@@ -13,6 +13,7 @@ Set up a MacBook with Claude as your AI co-pilot: it remembers your work between
 | **Remote Control** | Start and steer sessions on your Mac from your phone ([prompt 16](prompts/16-remote-control-always-on.md)) |
 | **Skills and plugins** | Tested recipes for resumes, test-first coding, app releases and more ([SKILLS.md](SKILLS.md)) |
 | **A job-search toolkit** | Website, booking page, ATS-safe resume, proof projects, faster applications |
+| **A marketing kit** | 56 marketing skills, one per job, that read one shared brand profile ([prompt 18](prompts/18-marketing-kit.md)) |
 
 ## Install
 
@@ -56,6 +57,7 @@ Prefer to drive it yourself? Run the prompts in order:
 | 15 | [Memory with claude-mem](prompts/15-memory-claude-mem.md) (on your Mac) | Claude remembers your work between sessions, stored locally |
 | 16 | [Remote Control and long runs](prompts/16-remote-control-always-on.md) (on your Mac) | Steer Mac sessions from your phone; the Mac stays awake |
 | 17 | [Daily auto-apply](prompts/17-daily-auto-apply.md) (on your Mac) | Claude applies to matching jobs on its own twice a day or more, contacts recruiters and keeps your tracker sheet up to date |
+| 18 | [Marketing kit](prompts/18-marketing-kit.md) (optional) | One brand profile, then social, creators, launches, email and ads, one skill per job |
 
 ## Install my five skills
 
@@ -73,6 +75,22 @@ In Claude Code, run:
 | [`proof-project`](skills/proof-project/SKILL.md) | Turns one resume claim into a small public project with synthetic data and tests | "build a proof project for this resume line" |
 | [`job-autopilot`](skills/job-autopilot/SKILL.md) | Asks you its questions once, sets up connectors and Chrome, then applies to jobs on LinkedIn and Built In at least twice a day with a tailored resume, messages recruiters and logs it all in a Google Sheet | "set up job autopilot" |
 | [`resume-builder`](skills/resume-builder/SKILL.md) | Writes your resume as one HTML file and prints an ATS-safe PDF with Playwright; includes a template | "build my resume" |
+
+## Marketing kit
+
+A second plugin in this repo: 56 marketing skills curated from three MIT repos so that each job has one skill and no two compete for the same request.
+
+```
+/plugin install marketing-kit@ai-copilot-setup
+```
+
+| Source repo | What it brings |
+|---|---|
+| [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 50 skills: brand profile, copy, social, influencers, launches, offers, ads, SEO, analytics |
+| [CosmoBlk/email-marketing-bible](https://github.com/CosmoBlk/email-marketing-bible) | Email, SMS and cold email, with a gate: nothing sends until you type "send it" |
+| [nexscope-ai/eCommerce-Skills](https://github.com/nexscope-ai/eCommerce-Skills) | 5 skills with real content: TikTok Shop ads, listings, affiliates, analytics; Etsy search |
+
+Start by saying *"set up my product marketing context"*. Which skill owns which job, what I changed and what I left out: [plugins/marketing-kit](plugins/marketing-kit/README.md).
 
 ## Every skill and plugin I installed
 
